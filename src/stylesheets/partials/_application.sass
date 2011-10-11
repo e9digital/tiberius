@@ -1,0 +1,21 @@
+$main_columns: floor($blueprint_grid_columns * 3/4)
+$sidebar_columns: $blueprint_grid_columns - $main_columns
+
+#logo a
+  display: block
+  height: 0
+  width: 0
+  text-indent: -999px
+  //background: url(/images/logo.png) no-repeat
+
+body
+  background: black url(/images/placeholder.jpg) center top no-repeat
+  height: 1250px
+
+#content
+  @include container
+  text-align: center
+  margin-top: 625px
+
+ul
+  list-style-type: none
