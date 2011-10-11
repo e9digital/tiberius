@@ -1,6 +1,6 @@
 ssh_user    = "ubuntu@50.16.230.36"
-remote_root = "/srv/www/tiberius"
-ssh_key     = "/home/travis/.ec2/gsg-keypair.pem"
+remote_root = "/srv/static/tiberiasconstructioninc.com"
+ssh_key     = `echo ~/.ec2/gsg-keypair.pem`.delete("\n")
 dropbox_dir = ""
 
 desc "Runs preview"
@@ -10,7 +10,7 @@ task :preview do
 end
 
 desc "Build the site"
-task :build => ["styles:clear", "javascripts:generate", "dropbox:sync"] do
+task :build => ["styles:clear"] do
   puts "** building site"
   system "staticmatic build ."
 end
